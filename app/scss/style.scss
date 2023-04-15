@@ -1,1 +1,489 @@
+html {
+    box-sizing: border-box;
+}
 
+* {
+    box-sizing: inherit;
+
+    &::before,
+    &::after {
+        box-sizing: inherit;
+    }
+}
+
+ul,
+ol,
+button {
+    padding: 0;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+    margin: 0;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+blockquote,
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: inherit;
+    font-size: 14px;
+}
+
+button {
+    appearance: none;
+    padding: 0;
+    border: 0;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+a,
+button,
+input,
+textarea {
+    outline: transparent;
+}
+
+address {
+    font-style: normal;
+}
+
+// __________________________________________________//
+
+
+@mixin form-btn-style {
+    &:focus {
+        background-color: rgba(255, 122, 80, 0.1);
+        box-shadow: 0 0 0 2px rgba(255, 104, 56, 0.7);
+    }
+
+    &:hover {
+        background-color: #FF7A50;
+
+        path,
+        ellipse {
+            stroke: white;
+        }
+
+        .form-buttons__purchase-counter {
+            background-color: #fff;
+            color: #FF6838;
+        }
+    }
+
+    &:active {
+        background-color: #FFF2ED;
+
+        path,
+        ellipse {
+            stroke: #363853;
+        }
+
+        .form-buttons__purchase-counter {
+            background-color: #FF6838;
+            color: #fff;
+        }
+    }
+}
+
+
+
+
+
+
+// font-family: 'Rubik', sans-serif
+
+body {
+    background-color: #F9FAFF;
+    font-family: 'Rubik', sans-serif;
+    font-weight: 400;
+    line-height: 1;
+    font-size: 14px;
+    color: #31352B;
+}
+
+.container {
+    max-width: 1200px;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+
+.header {
+    &__inner {
+        padding: 60px 0;
+    }
+}
+
+.container {}
+
+.nav {
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &__inner {
+        display: flex;
+    }
+}
+
+.logo {
+    border-radius: 5px;
+    transition: box-shadow 0.3s ease, opacity 0.3s ease;
+
+    &:focus {
+        box-shadow: 0 0 0 2px rgba(255, 104, 56, 0.7);
+    }
+
+    &:hover {
+        opacity: 0.8;
+    }
+
+    &:active {
+        opacity: 0.5;
+    }
+
+    &__img {}
+}
+
+.menu {
+
+    display: flex;
+    align-items: center;
+    margin-right: 50px;
+
+    &__item {
+        &:not(:last-child) {
+            margin-right: 45px;
+        }
+    }
+
+    // .menu__link
+
+    &__link {
+        font-size: 18px;
+        color: #31352B;
+        border-radius: 5px;
+        transition: box-shadow 0.5s ease, color 0.5s ease, text-shadow 0.5s ease;
+
+        &:focus {
+            box-shadow: 0 0 0 2px rgba(255, 104, 56, 0.7);
+        }
+
+        &:hover {
+            color: #FF6838;
+        }
+
+        &:active {
+            text-shadow: 2px 2px 5px rgba(49, 53, 43, 0.5);
+        }
+    }
+}
+
+.form-buttons {
+
+    // .form-buttons__search
+
+    &__search {
+        margin-right: 10px;
+        position: relative;
+        width: 44px;
+        height: 44px;
+        padding: 12px;
+        border-radius: 5px;
+        transition: background-color 0.5s ease, box-shadow 0.5s ease;
+
+        @include form-btn-style;
+    }
+
+    // .form-buttons__purchase
+
+    &__purchase {
+        position: relative;
+        width: 44px;
+        height: 44px;
+        padding: 12px;
+        border-radius: 5px;
+        transition: background-color 0.5s ease, box-shadow 0.5s ease;
+
+        @include form-btn-style;
+    }
+
+    // .form-buttons__purchase-counter
+
+    &__purchase-counter {
+        position: absolute;
+        top: 8px;
+        right: 3px;
+        border-radius: 50%;
+        background-color: #FF6838;
+        color: #fff;
+        width: 14px;
+        height: 14px;
+        font-size: 10px;
+        line-height: 1.4;
+        transition: background-color 0.5s ease, color 0.5s ease;
+    }
+}
+
+.hero {
+    margin-bottom: 60px;
+
+    &__wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__inner {
+        max-width: 450px;
+    }
+
+    &__img {}
+
+    &__title {
+        color: #363853;
+        font-size: 66px;
+        line-height: 1.3;
+        font-weight: 500;
+        text-transform: uppercase;
+        margin-bottom: 20px;
+    }
+
+    // .hero__title--color
+
+    &__title--color {
+        color: #FF6838;
+    }
+
+    // .hero__text
+
+    &__text {
+        font-size: 20px;
+        line-height: 1.5;
+        margin-bottom: 20px;
+    }
+
+    // .hero__buttons
+
+    &__buttons {}
+
+    // .hero__btn-order
+
+    &__btn-order {
+        padding: 12px 32px;
+        background-color: #FF6838;
+        color: #FFF;
+        letter-spacing: 0.03em;
+        line-height: 1.3;
+        font-size: 18px;
+        border-radius: 6px;
+        margin-right: 34px;
+        border-radius: 5px;
+        transition: background-color 0.5s ease, box-shadow 0.5s ease, color 0.5s ease;
+
+        &:focus {
+            background-color: rgba(255, 122, 80, 0.1);
+            box-shadow: 0 0 0 2px rgba(255, 104, 56, 0.7);
+            color: #FF6838;
+        }
+
+        &:hover {
+            color: #FF6838;
+            background-color: #fff;
+            box-shadow: 0 5px 12px rgba(255, 104, 56, 0.2), 0 0 0 2px rgba(255, 104, 56, 0.7);
+        }
+
+        &:active {
+            color: #FF6838;
+            background-color: rgba(255, 122, 80, 0.1);
+            box-shadow: none;
+        }
+    }
+
+    // .hero__btn-detail
+
+    &__btn-detail {
+        color: #363853;
+        font-size: 20px;
+        line-height: 1.5;
+        position: relative;
+        border-radius: 5px;
+        text-decoration: underline;
+        transition: box-shadow 0.5s ease, text-decoration 0.5s ease, color 0.5s ease, text-shadow 0.5s ease;
+
+        // &::after {
+        //     content: '';
+        //     position: absolute;
+        //     bottom: 6px;
+        //     left: 0;
+        //     right: 0;
+        //     border-bottom: 1px solid #363853;
+        // }
+        &:focus {
+            box-shadow: 0 0 0 2px rgba(255, 104, 56, 0.7);
+            text-decoration: transparent;
+        }
+
+        &:hover {
+            color: #FF6838;
+            box-shadow: none;
+            text-decoration: transparent;
+        }
+
+        &:active {
+            text-shadow: 2px 2px 5px rgba(54, 56, 83, 0.5);
+            color: #363853;
+            text-decoration: transparent;
+        }
+    }
+}
+
+.popular {
+    padding-top: 60px;
+    text-align: center;
+    // .popular__filter-btn
+
+    &__filter-btn {
+        padding-top: 60px;
+        display: flex;
+        margin-bottom: 45px;
+
+    }
+
+    &__btn {
+        font-size: 20px;
+        line-height: 1.3;
+        color: #363853;
+        padding: 13px 32px;
+        display: flex;
+        align-items: center;
+        border-radius: 5px;
+        background-color: #FFFFFF;
+        box-shadow: 0 0 0 1px #ECECEC;
+        transition: box-shadow 0.5s ease, background-color 0.5s ease, color 0.5s ease;
+
+
+
+
+        &:not(:last-child) {
+            margin-right: 20px;
+        }
+
+
+
+        &:focus {
+            box-shadow: 0 0 0 2px rgba(255, 104, 56, 0.7);
+        }
+
+        &:hover {
+            background-color: rgba(255, 122, 80, 0.1);
+            box-shadow: 0px 0px 0px 2px rgba(255, 104, 56, 0.7);
+            color: #FF6838;
+
+            path {
+                fill: #FF6838;
+            }
+        }
+
+        &:active {
+            box-shadow: inset 0 -5px 12px rgba(255, 104, 56, 0.2);
+            background-color: #FFF;
+            color: #363853;
+
+            path {
+                fill: #363853;
+            }
+        }
+
+
+
+
+
+
+
+
+
+    }
+
+    // .popular__btn-name
+
+    &__btn-name {
+        padding-left: 10px;
+    }
+
+
+    &__food {}
+
+    // .popular__food-lists
+
+    &__food-lists {}
+
+    // .popular__food-item
+
+    &__food-item {
+        border: 1px solid #000;
+    }
+
+    // .popular__food-img
+
+    &__food-img {}
+
+    // .popular__food-name
+
+    &__food-name {}
+
+    // .popular__food-cost
+
+    &__food-cost {}
+
+    // .popular__food-btn
+
+    &__food-btn {}
+}
+
+.title {
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 1.3;
+    color: #363853;
+}
